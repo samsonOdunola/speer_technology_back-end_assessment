@@ -44,13 +44,13 @@ Before setting up and running this application, make sure you have the following
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/Lampnet-Technologies/Fudex-Backend.git
+   git clone https://github.com/samsonOdunola/speer_technology_back-end_assessment.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd Fudex-Backend
+   cd Speer-Tech-back-end_assesment
    ```
 
 3. Install the project dependencies:
