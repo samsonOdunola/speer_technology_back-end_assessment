@@ -7,11 +7,9 @@ This repository contains the source code for the solution to the speer technolog
 - [Stack/Technology](#stacktechnologypackages)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [configuration](#configuration)
 - [Usage](#usage)
-- [Initial Values](#Initial-Values)
 - [API Endpoints](#api-endpoints)
-- [Database Schema](#database-schema)
-- [Contributing](#contributing)
 
 ## Tasks:
 
@@ -59,17 +57,79 @@ Before setting up and running this application, make sure you have the following
    npm install
    ```
 
-* **How to run application**
+## Configuration
 
-  - Install dependencies:
-    - Navigate to each service/Folder including the gateway folder.
-    - Run the command "npm install" this will install all the dependencies needed for the project
-  - Servers:
-    The gateway server will be hosted locally on your [machine](http://localhost:4000) at port 4000. in order to start the the gateway server
-    - Move into the gateway directory "/gateway"
-    - Run the command "npm start" to start the server or "npm run dev" to start the server in dev mode
-    - Once the gateway server is up and running, repaeat the same step for the other services i.e. Inventory, Product and suppliers
-    - If you have done the above steps correctly, all four servers should be running independently.
+The configuration for the application is stored in the `config` directory. You should create a `.env` file in the root of the project and set the following environment variables:
 
-* **Testing and Documentation**
-  - Swagger Ui: The swagger UI interface contains a detailed documentation of all the API calls that can be madeon this project. This can be located by entering the [URL](http://localhost:4000/api-docs) into the browser of your URL.Please ensure all the servers are running before testing!.
+```env
+DBURL = connection string of mongoDb database
+HOST = preffared host name or hos ip address
+PORT = port on which application will be run
+JWT_KEY = secret key for JWT
+```
+
+## Usage
+
+To start the application, run the following command:
+
+```bash
+npm start
+```
+
+To start the application in development mode, run the following command:
+
+```bash
+npm run dev
+```
+To run unit tests for all the functions, run the following command:
+
+```bash
+npm run test
+```
+
+To see the coverage of test, run the following command:
+
+```bash
+npm run test:coverage
+```
+
+ON server start the server will start and listen on the port specified in your `.env` file (default is 3000).
+
+
+## API Endpoints
+
+The application provides the following API endpoints:
+
+- **api/auth/login**:
+  - POST: create a new user account.
+
+- **/api/auth/login**:
+  - POST: Log in to an existing user account and receive an access token. 
+
+- **/api/notes**:
+  - POST: reate a new note for the authenticated 
+  
+- **/api/notes/:id**:
+  - GET: get a note by ID for the authenticated.
+  - PUT: Update an existing note by ID for the authenticated user  
+  - DELETE: delete a note by ID for the authenticated user. 
+
+- **/api/notes/:id/share**:
+  - POST: share a note with another user for the authenticated user.
+
+- **/api/search?q=:query**:
+  - GET: Search for notes based on keywords for the authenticated user  
+
+## Testing
+
+To run unit tests for all the functions, run the following command:
+
+```bash
+npm run test
+```
+
+To see the coverage of test, run the following command:
+
+```bash
+npm run test:coverage
+```
