@@ -14,6 +14,7 @@ const createNote = async (req, res) => {
     const userInfo = await verifyUser(token);
     const {user} = userInfo;
 
+
     note = new NoteModel({title, content, userId: user._id});
 
     await note.save();
@@ -40,6 +41,7 @@ const getNote = async (req, res) => {
     const token = authorization.split(' ')[1];
     const userInfo = await verifyUser(token);
     const {user} = userInfo;
+
 
     notes = await NoteModel.find({
       $or: [{userId: user._id},
@@ -265,7 +267,12 @@ const search = async (req, res) => {
       });
     }
   } catch (err) {
-
+    return res.status(response.BAD_REQUEST).json({
+      success: false,
+      message: 'Search error',
+      error: err.message,
+      data: {},
+    });
   }
   return res.status(response.OK).json({
     success: true,
