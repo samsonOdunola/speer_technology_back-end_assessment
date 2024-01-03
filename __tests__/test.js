@@ -1,5 +1,5 @@
 const request = require('supertest');
-const App = require('../app'); // Assuming your Express app is in app.js
+const App = require('../app');
 
 describe('Test the root path', () => {
   test('It should respond with a JSON message', async () => {
