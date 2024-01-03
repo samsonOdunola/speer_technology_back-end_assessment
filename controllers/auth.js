@@ -30,7 +30,7 @@ const signIn = async (req, res) => {
     user = await UserModel.findOne({email});
 
     if (!user) {
-      return res.status(response.BAD_REQUEST).json({
+      return res.status(response.NOT_FOUND).json({
         success: false,
         message: 'user does not exist',
         error: 'error',
@@ -39,6 +39,7 @@ const signIn = async (req, res) => {
     }
 
     const isPassword = await comparePassword(password, user.password);
+
 
     if (!isPassword) {
       return res.status(response.BAD_REQUEST).json({
@@ -57,7 +58,7 @@ const signIn = async (req, res) => {
       data: {},
     });
   }
-  return res.status(response.CREATED).json({
+  return res.status(response.OK).json({
     success: true,
     message: 'Login Successfull',
     data: user,
