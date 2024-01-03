@@ -59,10 +59,6 @@ Before setting up and running this application, make sure you have the following
    npm install
    ```
 
-* **Database**
-
-  - The mongodb noSQL database was used for this project. Each microservices are attached to their own database but they can still communicate with wach other.
-
 * **How to run application**
 
   - Install dependencies:
