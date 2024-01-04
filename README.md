@@ -20,14 +20,22 @@ This repository contains the source code for the solution to the speer technolog
 
 ## stack/Technology/packages:
 
-- **Expressjs**: This is a third party node js framework used for writing asynchronous code.
-- **Node js**: This is the main platformm on which the application is built.  
-- **MongoDb(cloud version)**: This is a noSQL database that stores information in documents.
-- **jest**: This is package used for testing
+- **Expressjs**: This is a third party node js framework used for writing asynchronous code, it is a framework built for node js, it is very fast, easy to use and it is compatible with a lot of third party packages which makes it a very powerfull library.
+
+- **Node js**: This is the main platform on which the application is built. it is a javascript runtime enviroment that allows for javascript to be used outside of the browser. it is used in conjunction with NPM (Node package manager)
+
+- **MongoDb(cloud version)**: This is a noSQL database that stores information in document formats instead or tables, rows and clolumns. This makes it a very flexible database.
+
+- **jest**: This is package used for testing, it is the most popular testing library available for node js 
+ 
 - **supertest**: This is used alongside jest for testing
-- **bycrypt**: This is a third party NPM package used to hash passwords before it is svaed to the database.
+ 
+- **bycrypt**: This is a third party NPM package used to hash passwords before it is saved to the database.
+ 
 - **express-rate-limit**: This NPM package is used to impliment a simple rate limit for the server, it can be configured as desired.
+
 - **jsonwebtoken**: This third pary package is used to authorise a user after a successfull login as well as to authenticate a user when a request is made to an API endpoint.
+
 - **eslint**: This package is used to enforce a uniform styling when writing code.
 
 ## Prerequisites
