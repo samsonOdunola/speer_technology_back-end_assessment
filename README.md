@@ -10,6 +10,8 @@ This repository contains the source code for the solution to the speer technolog
 - [configuration](#configuration)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
+- [Testing](#testing)
+- [API Documentation and Testing](#api-documentation-and-testing)
 
 ## Tasks:
 
