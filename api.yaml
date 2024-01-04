@@ -1,0 +1,244 @@
+swagger: "2.0"
+info:
+  title: Speer_technology back-end Assessment
+  description: This is the collection of API's for the Assessment
+  version: 1.0
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: odunolasamson@yahoo.com
+  licence:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  servers:
+    - url: "http://localhost:3000/api"
+      description: This is my local server
+    - url: "xxxxxxxxxxx"
+      description: This is the deployed server
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+tags:
+  - name: Auth
+    description: Everything about Auth
+  - name: Notes
+    description: Everything about notes
+  - name: Search
+    description: Everything about search
+schemes: [http, https]
+host: localhost:3000
+basePath: /api/
+paths:
+  /auth/signup:
+    post:
+      description: Create a new user account
+      tags:
+        - Auth
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: user details
+          schema:
+            type: object
+            properties:
+              firstName:
+                type: string
+              lastName:
+                type: string
+              email:
+                type: string
+              password:
+                type: string
+              userName:
+                type: string
+      responses:
+        201:
+          description: user created
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              data:
+                type: object
+                properties:
+        400:
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              error:
+                type: string
+              data:
+                type: object
+                properties:
+  /auth/login:
+    post:
+      description: Login a user and authenticate
+      tags:
+        - Auth
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: user details
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string              
+      responses:
+        200:
+          description: okay
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              token:
+                type: string
+              data:
+                type: object
+                properties:
+        400:
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              error:
+                type: string
+              data:
+                type: object
+                properties:
+  /notes/{id}/share:
+    post:
+      description: Shares a note with another user
+      tags:
+        - Notes
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          type: string
+          example: Bearer Token 
+        - in: body
+          name: secondary user details
+          schema:
+            type: object
+            properties:
+              email:
+                type: string             
+      responses:
+        200:
+          description: okay
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string              
+              data:
+                type: object
+                properties:
+        400:
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              error:
+                type: string
+              data:
+                type: object
+                properties:
+        404:
+          description: Not found
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              error:
+                type: string
+              data:
+                type: object
+                properties:
+  /notes/:
+    post:
+      description: Create a note for an authenticated user
+      tags:
+        - Notes
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: header
+          name: Authorization
+          required: true
+          type: string
+          example: Bearer Token 
+        - in: body
+          name: Note details
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              content:
+                type: string              
+      responses:
+        200:
+          description: okay
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string              
+              data:
+                type: object
+                properties:
+        400:
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+              error:
+                type: string
+              data:
+                type: object
+                properties:

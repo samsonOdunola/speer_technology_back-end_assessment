@@ -141,3 +141,9 @@ To see the coverage of test, run the following command:
 ```bash
 npm run test:coverage
 ```
+
+## API Documentation and Testing
+
+The API has been documented using swagger documentation. This can be found by running going to the [swagger-documnetation-url](http://localhost:3000/api-docs/). The API can also be tested via this dooocumentation portal.
+
+**Note**: This runs locally so it is only available once the application is running
