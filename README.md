@@ -1,5 +1,6 @@
 # Speer Technology - Back-end Developer Assesment Task
-This repository contains the source code for the solution to the speer technology back-end developer assessment task. 
+
+This repository contains the source code for the solution to the speer technology back-end developer assessment task.
 
 ## Table of Contents
 
@@ -28,12 +29,12 @@ This repository contains the source code for the solution to the speer technolog
 
 - **MongoDb(cloud version)**: This is a noSQL database that stores information in document formats instead or tables, rows and clolumns. This makes it a very flexible database.
 
-- **jest**: This is package used for testing, it is the most popular testing library available for node js 
- 
+- **jest**: This is package used for testing, it is the most popular testing library available for node js
+
 - **supertest**: This is used alongside jest for testing
- 
+
 - **bycrypt**: This is a third party NPM package used to hash passwords before it is saved to the database.
- 
+
 - **express-rate-limit**: This NPM package is used to impliment a simple rate limit for the server, it can be configured as desired.
 
 - **jsonwebtoken**: This third pary package is used to authorise a user after a successfull login as well as to authenticate a user when a request is made to an API endpoint.
@@ -76,6 +77,7 @@ DBURL = connection string of mongoDb database
 HOST = preffared host name or hos ip address
 PORT = port on which application will be run
 JWT_KEY = secret key for JWT
+TESTDB = url of test mongoDB database
 ```
 
 ## Usage
@@ -91,6 +93,7 @@ To start the application in development mode, run the following command:
 ```bash
 npm run dev
 ```
+
 To run unit tests for all the functions, run the following command:
 
 ```bash
@@ -105,30 +108,32 @@ npm run test:coverage
 
 ON server start the server will start and listen on the port specified in your `.env` file (default is 3000).
 
-
 ## API Endpoints
 
 The application provides the following API endpoints:
 
 - **api/auth/login**:
+
   - POST: create a new user account.
 
 - **/api/auth/login**:
-  - POST: Log in to an existing user account and receive an access token. 
+
+  - POST: Log in to an existing user account and receive an access token.
 
 - **/api/notes**:
-  - POST: reate a new note for the authenticated 
-  
+  - POST: reate a new note for the authenticated
 - **/api/notes/:id**:
+
   - GET: get a note by ID for the authenticated.
-  - PUT: Update an existing note by ID for the authenticated user  
-  - DELETE: delete a note by ID for the authenticated user. 
+  - PUT: Update an existing note by ID for the authenticated user
+  - DELETE: delete a note by ID for the authenticated user.
 
 - **/api/notes/:id/share**:
+
   - POST: share a note with another user for the authenticated user.
 
 - **/api/search?q=:query**:
-  - GET: Search for notes based on keywords for the authenticated user  
+  - GET: Search for notes based on keywords for the authenticated user
 
 ## Testing
 
