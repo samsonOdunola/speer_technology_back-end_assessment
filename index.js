@@ -1,7 +1,6 @@
-require('dotenv').config();
-const App = require('./app');
-const database = require('./config/mongoDB.config');
-
+require("dotenv").config();
+const App = require("./app");
+const database = require("./config/mongoDB.config");
 
 const port = process.env.PORT;
 

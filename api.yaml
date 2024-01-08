@@ -25,7 +25,7 @@ tags:
   - name: Search
     description: Everything about search
 schemes: [http, https]
-host: localhost:3000
+host: localhost:5000
 basePath: /api/
 paths:
   /auth/signup:
@@ -98,7 +98,7 @@ paths:
               email:
                 type: string
               password:
-                type: string              
+                type: string
       responses:
         200:
           description: okay
@@ -147,14 +147,14 @@ paths:
           name: Authorization
           required: true
           type: string
-          example: Bearer Token 
+          example: Bearer Token
         - in: body
           name: secondary user details
           schema:
             type: object
             properties:
               email:
-                type: string             
+                type: string
       responses:
         200:
           description: okay
@@ -164,7 +164,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
@@ -210,7 +210,7 @@ paths:
           name: Authorization
           required: true
           type: string
-          example: Bearer Token 
+          example: Bearer Token
         - in: body
           name: Note details
           schema:
@@ -219,7 +219,7 @@ paths:
               title:
                 type: string
               content:
-                type: string              
+                type: string
       responses:
         200:
           description: okay
@@ -229,7 +229,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
@@ -269,12 +269,12 @@ paths:
         - application/json
       produces:
         - application/json
-      parameters:        
+      parameters:
         - in: header
           name: Authorization
           required: true
           type: string
-          example: Bearer Token                      
+          example: Bearer Token
       responses:
         200:
           description: okay
@@ -284,7 +284,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
@@ -329,7 +329,7 @@ paths:
                 type: string
               data:
                 type: object
-                properties:  
+                properties:
   /notes/{id}:
     put:
       description: Modifies note by Id for an authenticated user
@@ -348,7 +348,7 @@ paths:
           name: Authorization
           required: true
           type: string
-          example: Bearer Token 
+          example: Bearer Token
         - in: body
           name: Note details
           schema:
@@ -357,7 +357,7 @@ paths:
               title:
                 type: string
               content:
-                type: string                     
+                type: string
       responses:
         200:
           description: okay
@@ -367,7 +367,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
@@ -430,7 +430,7 @@ paths:
           name: Authorization
           required: true
           type: string
-          example: Bearer Token                      
+          example: Bearer Token
       responses:
         200:
           description: okay
@@ -440,7 +440,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
@@ -503,7 +503,7 @@ paths:
           name: Authorization
           required: true
           type: string
-          example: Bearer Token                      
+          example: Bearer Token
       responses:
         200:
           description: okay
@@ -513,7 +513,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
@@ -558,7 +558,7 @@ paths:
                 type: string
               data:
                 type: object
-                properties:             
+                properties:
   /search/?{q}:
     get:
       description: search for notes using keywords for an authenticated user
@@ -568,16 +568,16 @@ paths:
         - application/json
       produces:
         - application/json
-      parameters: 
+      parameters:
         - in: query
           name: q
           required: true
-          type: string          
+          type: string
         - in: header
           name: Authorization
           required: true
           type: string
-          example: Bearer Token                      
+          example: Bearer Token
       responses:
         200:
           description: okay
@@ -587,7 +587,7 @@ paths:
               success:
                 type: boolean
               message:
-                type: string              
+                type: string
               data:
                 type: object
                 properties:
